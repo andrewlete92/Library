@@ -28,7 +28,12 @@
 }
 
 .textbox{
-	size: 600px;
+	width: 350px;
+	text-align: left;
+}
+
+.textbox2{
+	width: 250px;
 	text-align: left;
 }
 

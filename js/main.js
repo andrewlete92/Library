@@ -7,7 +7,7 @@ jQuery(document).on('submit','#formlg',function(event){
 		dataType: 'json',
 		data: $(this).serialize(),
 		beforeSend: function(){
-			$('#btnlg').val("VALIDANDO...");
+			$('#btnlg').val("VALIDANDO..."); //Sustituir por un cargando
 		}
 	})
 	.done(function(respuesta) {
@@ -30,7 +30,7 @@ jQuery(document).on('submit','#formlg',function(event){
 		}
 	})
 	.fail(function(resp) {
-		//console.log(resp);
+		console.log(resp);
 	})
 	.always(function(){
 		console.log("Complete");
@@ -39,4 +39,8 @@ jQuery(document).on('submit','#formlg',function(event){
 
 function signin(){
 	window.location = "SignInUp.php";
+}
+
+function logout(){
+	window.location = "../Comun/Index.php";
 }

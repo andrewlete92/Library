@@ -25,13 +25,13 @@
 				<h3>EMAIL</h3>
 			</div>
 			<div class="col">
-				<input type="text" required="true" name="userlg" placeholder="Email">
+				<input class="textbox" type="text" required="true" name="userlg" placeholder="Email" >
 			</div>
 			<div class="">
 				<h3>CONTRASEÑA</h3>
 			</div>
 			<div class="col">
-				<input type="password" required="true" name="passlg" placeholder="Contraseña">
+				<input class="textbox2" type="password" required="true" name="passlg" placeholder="Contraseña">
 			</div>
 			<div class="col">
 				<!--<button class="btn btn-success" name="btnlg">INGRESAR</button>-->
@@ -43,10 +43,20 @@
 			<button class="btn btn-primary" name="btnlg2" onclick="signin()">REGISTRARSE</button>		
 		</div>
 	</div>
-					
+	<nav class="navbar navbar-expand-sm bg-light">
+  	<ul class="navbar-nav">
+		 <li class="nav-item">
+      			<a class="nav-link" href="Index.php">Inicio</a>
+  		</li>
+   		<li class="nav-item">
+     			<a class="nav-link" href="Libros.php">Lecturas</a>
+   		</li>
+   		<li class="nav-item">
+      			<a class="nav-link" href="Editrial-php">Noticias</a>
+   		</li>
+	</ul>
+	</nav>				
 </section>
-
-	
 
 <footer>
 	<iframe src="footer.html" id="footer"></iframe>

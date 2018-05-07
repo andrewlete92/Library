@@ -1,0 +1,5 @@
+CREATE TABLE tbl_Users(idUser INT IDENTITY PRIMARY KEY, Name VARCHAR (100), LastName VARCHAR (100),
+	     	   User VARCHAR(100), Pass VARCHAR(50),UserType VARCHAR(20))
+INSERT INTO tbl_users VALUES
+(1,'Andres','Angulo','andres.angulo',1234,'Admin'),
+(1,'Andres','Lopez','andres.lopez',1234,'User');
