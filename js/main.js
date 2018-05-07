@@ -14,9 +14,8 @@ jQuery(document).on('submit','#formlg',function(event){
 		//console.log(respuesta);
 		if (!respuesta.error) {
 			if(respuesta.type=='Admin'){
-			//location.href='';
 			$('#btnlg').val("INGRESAR");
-			alert("Perfil Admin");
+			location.href='../Admin_views/Admin_panel.html';
 			} else if (respuesta.type=='User'){
 			$('#btnlg').val("INGRESAR");
 			//location.href='';
