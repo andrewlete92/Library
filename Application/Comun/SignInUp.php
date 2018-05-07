@@ -4,12 +4,15 @@
 	<meta charset="UTF-8">
 	<title>SignIn</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/stylesheet.css">
-	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="../../css/stylesheet.css">
+	<link rel="stylesheet" href="../../css/footer.css">
 </head>
 <body>
+<div class="confirmation">
+	<span>Felicidades! El usuario ha sido registrado con éxito</span>
+</div>
 	<div>
-		<img src="img/signin_banner.jpg" style="width: 100%; height: 100%">
+		<img src="../../img/signin_banner.jpg" style="width: 100%; height: 100%">
 	</div>
 <nav class="navbar navbar-expand-sm bg-light">
   	<ul class="navbar-nav">

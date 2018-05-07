@@ -5,10 +5,11 @@
 
 .barra{
 	margin: 10px;
+	text-align: left;
 }
 
 .botonIni{
-	margin: 
+	height: 10px;
 }
 
 #footer{
@@ -18,4 +19,20 @@
     border: none;
     padding: 0px;
     z-index: 0;
+}
+
+.textbox{
+	size: 600px;
+	text-align: left;
+}
+
+.error{
+	display: none;
+	background-color: red;
+	color: white;
+	text-align: center;
+}
+
+.confirmation{
+	display: none;
 }
