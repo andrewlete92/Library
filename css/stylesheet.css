@@ -39,9 +39,8 @@
 
 .error{
 	display: none;
-	background-color: red;
-	color: white;
 	text-align: center;
+	margin: 0px;
 }
 
 .confirmation{
@@ -76,10 +75,17 @@
 }
 
 .content {
-	padding: 0px;
-	background-color: green;
+	padding: 5px;
+	position: relative;
 }
-#content{
+#contentAdmin{
 
 }
 
+.marco{
+	padding: 15px;
+}
+
+.navigationbar{
+	
+}

@@ -1,3 +1,4 @@
+//Inicia verificación Login
 jQuery(document).on('submit','#formlg',function(event){
 	event.preventDefault();
 
@@ -19,7 +20,7 @@ jQuery(document).on('submit','#formlg',function(event){
 			} else if (respuesta.type=='User'){
 			$('#btnlg').val("INGRESAR");
 			//location.href='';
-			alert("Perfil Usuario");
+			location.href='../Users_views/User_panel.html';
 			}
 		}else {
 			$('.error').slideDown('slow');
@@ -36,6 +37,7 @@ jQuery(document).on('submit','#formlg',function(event){
 		console.log("Complete");
 	});
 });
+//Finaliza verificación login
 
 function signin(){
 	window.location = "SignInUp.php";

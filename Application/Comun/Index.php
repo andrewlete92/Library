@@ -10,8 +10,8 @@
 	<script src="../../js/main.js"></script>
 </head>
 <body>
-<div class="error">
-	<span>Usuario y/o Contraseña son inválidos, por favor verifique</span>
+<div class="alert alert-danger error" role="alert">
+	Usuario y/o Contraseña son inválidos, por favor verifique
 </div>
 <div>
 	<img class="banner" src="../../img/banner-biblioteca.jpg">
