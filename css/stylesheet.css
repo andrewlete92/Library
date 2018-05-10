@@ -43,8 +43,24 @@
 	margin: 0px;
 }
 
-.confirmation{
-	display: none;
+.modalpopup{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+.modal-cont{
+	position: absolute;
+	top: 50%;
+	margin: 30% 0 0 0;
+	border: none;
+}
+
+.messagePopUp{
+	position: absolute;
+	width: 100%;
+	visibility: visible;
 }
 
 .vertical-menu {
@@ -87,5 +103,5 @@
 }
 
 .navigationbar{
-	
+	position: relative;
 }

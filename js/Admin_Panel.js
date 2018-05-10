@@ -4,6 +4,6 @@ $(document).ready(function()
     {
         event.preventDefault();            
        //Cargamos el contenido del enlace
-        $('#contentSet').load(this.href);
+        $('#content').load(this.href);
     });
 });
