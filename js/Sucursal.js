@@ -2,8 +2,15 @@ jQuery(document).ready(function() {loadSucursal();});
 
 jQuery(document).on('click', '#btnSaveSuc', function(event) {
 	event.preventDefault();
+	if($('#id_suc').val().length!=0 && $('#name').val().length!=0 && $('#Address').val().length!=0){
 	insertSucursal();
-	loadSucursal();
+	} else {
+	$("#modal").load('../Comun/Modals/Error_Data.html');
+	setTimeout(function(){
+	$(".modalpopup").modal();
+	},500);
+	}
+	
 });
 
 function loadSucursal(){
@@ -35,7 +42,6 @@ function loadSucursal(){
 }
 
 function insertSucursal(){
-if($('#id_suc').val().length!=0 && $('#name').val().length!=0 && $('#Address').val().length!=0){
 	jQuery.ajax({
 		url: '../db_admin/Sucursal.php',
 		type: 'POST',
@@ -45,29 +51,23 @@ if($('#id_suc').val().length!=0 && $('#name').val().length!=0 && $('#Address').v
 	.done(function(data){
 		console.log("success");
 		console.log(data);
-		if(!data.asw){
+		if(!data.answ){
 			$("#modal").load('../Comun/Modals/Success_Save.html');
 			setTimeout(function(){
 			$(".modalpopup").modal();
 			},500);
-		} else {
+		} else{
 			$("#modal").load('../Comun/Modals/Error_Save.html');
 			setTimeout(function(){
 			$(".modalpopup").modal();
 			},500);
-
-		}	
+		}
 	})
 	.fail(function(fail) {
-		console.log("fail");
+		console.log('fail');
 	})
 	.always(function() {
 		console.log("complete");
+		loadSucursal();
 	});
-} else {
-	$("#modal").load('../Comun/Modals/Error_Data.html');
-	setTimeout(function(){
-	$(".modalpopup").modal();
-	},500);
-}
 }

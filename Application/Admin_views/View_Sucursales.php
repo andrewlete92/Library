@@ -13,13 +13,13 @@
 <form action="" id="formSucursal">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Sucursal" name="id_suc" id="id_suc" min="0">
+			<input type="number" placeholder="Id_Sucursal *" name="id_suc" id="id_suc" min="0">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Nombre" name="name" id="name">
+			<input type="text" placeholder="Nombre *" name="name" id="name">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Dirección" name="Address" id="Address">
+			<input type="text" placeholder="Dirección *" name="Address" id="Address">
 		</div>
 		<div class="col">
 			<button class="btn btn-primary" id="btnSaveSuc" name="btnSaveSuc">GUARDAR</button>
