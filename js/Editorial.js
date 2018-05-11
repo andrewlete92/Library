@@ -1,9 +1,9 @@
-jQuery(document).ready(function() {loadSucursal();});
+jQuery(document).ready(function() {loadEditorial();});
 
-jQuery(document).on('click', '#btnSaveSuc', function(event) {
+jQuery(document).on('click', '#btnSaveEdit', function(event) {
 	event.preventDefault();
-	if($('#id_suc').val().length!=0 && $('#name').val().length!=0 && $('#Address').val().length!=0){
-	insertSucursal();
+	if($('#idEdit').val().length!=0 && $('#name').val().length!=0){
+	insertEdit();
 	} else {
 	$("#modal").load('../Comun/Modals/Error_Data.html');
 	setTimeout(function(){
@@ -12,9 +12,9 @@ jQuery(document).on('click', '#btnSaveSuc', function(event) {
 	}
 });
 
-function loadSucursal(){
+function loadEditorial(){
 	jQuery.ajax({
-		url: '../db_admin/Sucursal.php',
+		url: '../db_admin/Editorial.php',
 		type: 'POST',
 		dataType: 'json',
 		data: $(this).serialize()+ "&action=" + 'load',
@@ -23,11 +23,11 @@ function loadSucursal(){
 		//console.log("success");
 		console.log(data);
 		if(!data.error){
-			$("#contenido").html('');
+			$("#contentEdit").html('');
 			if(data !=null){
 				$.each(data, function(index,value){
-					var fila = "<tr><td>" + value.idSucursal + "</td><td>" + value.NomSucursal + "</td><td>" + value.direccion + "</td></tr>" +"<input type=" + "button"+ "/>";
-					$("#contenido").append(fila);
+					var fila = "<tr><td>" + value.idEditorial + "</td><td>" + value.nombre + "</td><td>" + value.direccion + "</td><td>" + value.telefono + '</td><td>' + '<input type="button" value="btn" id="delbtn"/>' +"</td></tr>";
+					$("#contentEdit").append(fila);
 				});
 			}
 		}
@@ -40,12 +40,12 @@ function loadSucursal(){
 	});
 }
 
-function insertSucursal(){
+function insertEdit(){
 	jQuery.ajax({
-		url: '../db_admin/Sucursal.php',
+		url: '../db_admin/Editorial.php',
 		type: 'POST',
 		dataType: 'json',
-		data: $('#formSucursal').serialize()+ "&action=" + 'insert',
+		data: $('#formEditorial').serialize()+ "&action=" + 'insert',
 	})
 	.done(function(data){
 		console.log("success");
@@ -66,11 +66,11 @@ function insertSucursal(){
 	})
 	.always(function() {
 		console.log("complete");
-		loadSucursal();
+		loadEditorial();
 		limpiar();
-	});
+	});	
 }
 
 function limpiar(){
-	document.getElementById("formSucursal").reset();
+	document.getElementById("formEditorial").reset();
 }

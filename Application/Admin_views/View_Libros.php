@@ -2,28 +2,41 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../css/stylesheet.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/stylesheet.css">
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/Libros.js"></script>
 </head>
 <body>
 <div class="container marco">
+<form action="" id="formLibros">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Libro">
+			<input type="number" placeholder="Id_Libro *" id="idLibro" name="idLibro">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Título">
+			<input type="text" placeholder="Título *" id="titulo" name="titulo">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Editorial">
+      <select class="form-control" id="SelectEdit">
+                      <option value="0">Seleccione Editorial</option>
+                
+      </select>
 		</div>
     <div class="col">
-      <input type="text" placeholder="Autor">
+      <select class="form-control" id="SelectAutor">
+                <option value="0">Seleccione Autor</option>
+      </select>
     </div>
 		<div class="col">
-			<button class="btn btn-primary">GUARDAR</button>
+			<button class="btn btn-primary" id="btnSaveLib">GUARDAR</button>
 		</div>
 	</div>
+</form>
+<div id="modal" role="dialog">
+      
+</div>
 </div>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
@@ -32,27 +45,11 @@
       <th scope="col">Titulo</th>
       <th scope="col">Editorial</th>
       <th scope="col">Autor</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>Otto</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>Address</td>
-      <td>Address</td>
-    </tr>
+  <tbody id="contentLibro">
+    
   </tbody>
 </table>
 </body>

@@ -2,21 +2,21 @@
 require 'Conection.php';
 
 if($_POST['action']=='load'){
-	$sucursales = $mysqli->query("
-	SELECT * FROM tblsucursal");
+	$autores = $mysqli->query("
+	SELECT * FROM tblAutores");
 
-	if ($sucursales->num_rows!=null){
-	$data = $sucursales->fetch_all(MYSQLI_ASSOC);
+	if ($autores->num_rows!=null){
+	$data = $autores->fetch_all(MYSQLI_ASSOC);
 	echo json_encode($data);
 	}else{
 	echo json_encode(array('error' =>true));
 	}
 } elseif($_POST['action']=='insert'){
-	$cod = $_POST['id_suc'];
+	$cod = $_POST['Id_Autor'];
 	$name = $_POST['name'];
-	$dir = $_POST['Address'];
+	$edad = $_POST['edad'];
 
-	$sql = "INSERT INTO tblsucursal VALUES ('$cod', '$name', '$dir')";
+	$sql = "INSERT INTO tblAutores VALUES ('$cod', '$name', '$edad')";
 	if(mySqli_query($mysqli,$sql)){
 		echo json_encode(array('answ' =>false));
 	} else {
@@ -24,6 +24,6 @@ if($_POST['action']=='load'){
 	}
 }
 
-$mysqli->close();
 
+$mysqli->close();
 ?>

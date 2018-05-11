@@ -2,28 +2,36 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../css/stylesheet.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/stylesheet.css">
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/Editorial.js"></script>
 </head>
 <body>
 <div class="container marco">
+<form action="" id="formEditorial">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Editorial">
+			<input type="number" placeholder="Id_Editorial *" required="true" min="0" name="idEdit" id="idEdit">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Nombre">
+			<input type="text" placeholder="Nombre *" required="true" name="name" id="name">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Dirección">
+			<input type="text" placeholder="Dirección" name="Address">
 		</div>
 		<div class="col">
-			<input type="number" placeholder="Teléfono">
+			<input type="number" placeholder="Teléfono" name="tel">
 		</div>
 		<div class="col">
-			<button class="btn btn-primary">GUARDAR</button>
+			<button class="btn btn-primary" id="btnSaveEdit">GUARDAR</button>
 		</div>
 	</div>
+</form>
+</div>
+<div id="modal" role="dialog">
+      
 </div>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
@@ -32,27 +40,11 @@
       <th scope="col">Nombre</th>
       <th scope="col">Dirección</th>
       <th scope="col">Teléfono</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>1234</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>1234</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>Address</td>
-      <td>1234</td>
-    </tr>
+    <tbody id="contentEdit">
+    
   </tbody>
 </table>
 </body>

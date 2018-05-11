@@ -1,5 +1,69 @@
+CREATE DATABASE Library;
+USE Library;
 CREATE TABLE tbl_Users(idUser INT IDENTITY PRIMARY KEY, Name VARCHAR (100), LastName VARCHAR (100),
 	     	   User VARCHAR(100), Pass VARCHAR(50),UserType VARCHAR(20))
 INSERT INTO tbl_users VALUES
 (1,'Andres','Angulo','andres.angulo',1234,'Admin'),
 (1,'Andres','Lopez','andres.lopez',1234,'User');
+
+create table tblSucursal(
+idSucursal int primary key,
+NomSucursal varchar(100),
+direccion varchar (50)
+);
+
+insert into tblSucursal values (11, 'central', 'Cra 50'),
+			       (12, 'itagui', 'Cra 85'),
+			       (13, 'copacabana', 'Cra 35'),
+			       (14, 'sabaneta', 'Cra 12');
+
+create table tblEditorial(
+idEditorial int primary key,
+nombre varchar(100),
+direccion varchar (100),
+telefono varchar(12)
+);
+
+insert into tblEditorial values (111, 'Norma', 'Carrera 50', 2563526),
+				(222, 'Universal', 'Carrera 80', 8546541),
+				(333, 'Planeta', 'Carrera 30', 7985451),
+				(444, 'Santillana', 'Carrera 45', 4546571),
+				(555, 'Educar', 'Carrera 25', 4654981);
+
+create table tblAutores(
+    
+idAutor int primary key,
+nomAutor varchar(100),
+edad int
+);
+
+insert into tblAutores values (11111, 'Gabriel Garcia Marquez', 53),
+			      (11112, 'Andres Velez', 61),
+			      (11113, 'Patricia Roquik', 70),
+			      (11114, 'Lucia Gongora', 54),
+			      (11115, 'Carlos Martinez', 62);
+
+create table tblLibro(
+    
+idLibro varchar(5) primary key,
+titulo varchar(200),
+idEditorial int,
+foreign key (idEditorial) references tblEditorial(idEditorial),
+idAutor Int,
+foreign key (idAutor) references tblAutores(idAutor) 
+);
+
+insert into tblLibro values ('1111', 'cien anios de soledad', 111,11111),
+			    (1112, 'El tunel', 111,11112),
+			    (1113, 'La hija del aguijon', 222,11113),
+			    (1114, 'Satanas', 333,11114),
+			    (1115, 'Laboragine', 222,11115),
+			    (1116, 'El perfume', 444,11111),
+			    (1117, 'Cuando las madres lloran', 111,11114);
+
+CREATE VIEW vw_libros
+AS
+SELECT l.idLibro, l.titulo, e.nombre as Editorial, a.nomAutor as Autor
+FROM tbllibro l
+INNER JOIN tbleditorial e ON l.idEditorial = e.idEditorial
+INNER JOIN tblautores a ON l.idAutor = a.idAutor

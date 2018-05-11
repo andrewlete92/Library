@@ -2,25 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../css/stylesheet.css">
+  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/stylesheet.css">
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/Autor.js"></script>
 </head>
 <body>
 <div class="container marco">
+<form action="" id="formAutor">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Autor">
+			<input type="number" placeholder="Id_Autor *" id="Id_Autor" name="Id_Autor">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Nombre">
+			<input type="text" placeholder="Nombre *" id="name" name="name">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Edad">
+			<input type="number" placeholder="Edad *" id="edad" name="edad" >
 		</div>
 		<div class="col">
-			<button class="btn btn-primary">GUARDAR</button>
+			<button class="btn btn-primary" id="btnSaveAut" name="btnSaveAut">GUARDAR</button>
 		</div>
 	</div>
+</form>
+<div id="modal" role="dialog">
+      
+</div>
 </div>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">
@@ -28,24 +36,11 @@
       <th scope="col">Id_Autor</th>
       <th scope="col">Nombre</th>
       <th scope="col">Edad</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>25</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>40</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry the Bird</td>
-      <td>50</td>
-    </tr>
+  <tbody id="contentAutor">
+    
   </tbody>
 </table>
 </body>

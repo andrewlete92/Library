@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../css/stylesheet.css">
-  <script src="../../js/jquery.js"></script>
-  <script src="../../js/bootstrap.min.js"></script>
+  	<script src="../../js/jquery.js"></script>
+  	<script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/Sucursal.js"></script>
 </head>
 <body>
@@ -36,6 +36,7 @@
       <th scope="col">Id_Sucursal</th>
       <th scope="col">Nombre</th>
       <th scope="col">Dirección</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
   <tbody id="contenido">

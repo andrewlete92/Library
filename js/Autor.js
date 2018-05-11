@@ -1,9 +1,9 @@
-jQuery(document).ready(function() {loadSucursal();});
+jQuery(document).ready(function() {loadAutor();});
 
-jQuery(document).on('click', '#btnSaveSuc', function(event) {
+jQuery(document).on('click', '#btnSaveAut', function(event) {
 	event.preventDefault();
-	if($('#id_suc').val().length!=0 && $('#name').val().length!=0 && $('#Address').val().length!=0){
-	insertSucursal();
+	if($('#Id_Autor').val().length!=0 && $('#name').val().length!=0 && $('#edad').val().length!=0){
+	insertAutor();
 	} else {
 	$("#modal").load('../Comun/Modals/Error_Data.html');
 	setTimeout(function(){
@@ -12,9 +12,9 @@ jQuery(document).on('click', '#btnSaveSuc', function(event) {
 	}
 });
 
-function loadSucursal(){
+function loadAutor(){
 	jQuery.ajax({
-		url: '../db_admin/Sucursal.php',
+		url: '../db_admin/Autor.php',
 		type: 'POST',
 		dataType: 'json',
 		data: $(this).serialize()+ "&action=" + 'load',
@@ -23,11 +23,11 @@ function loadSucursal(){
 		//console.log("success");
 		console.log(data);
 		if(!data.error){
-			$("#contenido").html('');
+			$("#contentAutor").html('');
 			if(data !=null){
 				$.each(data, function(index,value){
-					var fila = "<tr><td>" + value.idSucursal + "</td><td>" + value.NomSucursal + "</td><td>" + value.direccion + "</td></tr>" +"<input type=" + "button"+ "/>";
-					$("#contenido").append(fila);
+					var fila = "<tr><td>" + value.idAutor + "</td><td>" + value.nomAutor + "</td><td>" + value.edad + '</td><td>' + '<input type="button" value="btn" id="delbtn"/>' +"</td></tr>";
+					$("#contentAutor").append(fila);
 				});
 			}
 		}
@@ -40,12 +40,12 @@ function loadSucursal(){
 	});
 }
 
-function insertSucursal(){
+function insertAutor(){
 	jQuery.ajax({
-		url: '../db_admin/Sucursal.php',
+		url: '../db_admin/Autor.php',
 		type: 'POST',
 		dataType: 'json',
-		data: $('#formSucursal').serialize()+ "&action=" + 'insert',
+		data: $('#formAutor').serialize()+ "&action=" + 'insert',
 	})
 	.done(function(data){
 		console.log("success");
@@ -66,11 +66,11 @@ function insertSucursal(){
 	})
 	.always(function() {
 		console.log("complete");
-		loadSucursal();
+		loadAutor();
 		limpiar();
-	});
+	});	
 }
 
 function limpiar(){
-	document.getElementById("formSucursal").reset();
+	document.getElementById("formAutor").reset();
 }
