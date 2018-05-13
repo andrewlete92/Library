@@ -10,13 +10,13 @@
 </head>
 <body>
 <div class="container marco">
-<form action="" id="formLibros">
+<form action="" id="formLibros_Sucursal">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Libro *" id="idLibro" name="idLibro">
+			<input type="number" class="form-control" placeholder="Id_Libro *" id="idLibro" name="idLibro">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Título *" id="titulo" name="titulo">
+			<input type="text" class="form-control" placeholder="Título *" id="titulo" name="titulo">
 		</div>
 		<div class="col">
       <select class="form-control" id="SelectEdit">

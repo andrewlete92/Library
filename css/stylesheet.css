@@ -109,3 +109,16 @@
 .filabtn{
 	size: 20px;
 }
+
+.btnDelete {
+	color: white;
+	margin: 0 0 0 5px;
+}
+
+.btnEdit{
+	color: white;
+}
+
+.btnCancel {
+	margin: 5 5 5 5px;
+}

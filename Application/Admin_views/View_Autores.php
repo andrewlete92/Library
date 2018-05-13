@@ -13,13 +13,13 @@
 <form action="" id="formAutor">
 	<div class="row">
 		<div class="col">
-			<input type="number" placeholder="Id_Autor *" id="Id_Autor" name="Id_Autor">
+			<input type="number" class="form-control" placeholder="Id_Autor *" id="Id_Autor" name="Id_Autor">
 		</div>
 		<div class="col">
-			<input type="text" placeholder="Nombre *" id="name" name="name">
+			<input type="text" class="form-control" placeholder="Nombre *" id="name" name="name">
 		</div>
 		<div class="col">
-			<input type="number" placeholder="Edad *" id="edad" name="edad" >
+			<input type="number" class="form-control" placeholder="Edad *" id="edad" name="edad" >
 		</div>
 		<div class="col">
 			<button class="btn btn-primary" id="btnSaveAut" name="btnSaveAut">GUARDAR</button>
