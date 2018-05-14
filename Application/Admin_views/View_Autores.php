@@ -13,6 +13,7 @@
 <form action="" id="formAutor">
 	<div class="row">
 		<div class="col">
+			<input class="form-control" name="id" id="id" hidden="true">
 			<input type="number" class="form-control" placeholder="Id_Autor *" id="Id_Autor" name="Id_Autor">
 		</div>
 		<div class="col">
@@ -22,7 +23,10 @@
 			<input type="number" class="form-control" placeholder="Edad *" id="edad" name="edad" >
 		</div>
 		<div class="col">
-			<button class="btn btn-primary" id="btnSaveAut" name="btnSaveAut">GUARDAR</button>
+			<input class="btn btn-primary" id="btnAction" value="GUARDAR">
+		</div>
+		<div class="col">
+			<input type="button" class="btn btnCancel" id="btnCancel" value="CANCELAR" hidden="true">
 		</div>
 	</div>
 </form>

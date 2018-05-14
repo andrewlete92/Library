@@ -41,7 +41,42 @@ if($_POST['action']=='load'){
 	} else {
 		echo json_encode(array('answ' =>true));
 	}
-}
+} elseif($_POST['action']=='find'){
+	$cod = $_POST['id'];
+	$libro = $mysqli->query("
+	SELECT * FROM tbllibro WHERE idLibro = '$cod'");
+	if ($libro->num_rows!=null){
+	$data = $libro->fetch_all(MYSQLI_ASSOC);
+	echo json_encode($data);
+	}else{
+	echo json_encode(array('error' =>true));
+	}
+} elseif($_POST['action']=='update'){
+	$id = $_POST['id'];
+	$cod = $_POST['idLibro'];
+	$titulo = $_POST['titulo'];
+	$idEditorial = $_POST['editorial'];
+	$idAutor = $_POST['autor'];
+
+	$sql = "UPDATE tbllibro 
+			SET idLibro = '$cod', titulo = '$titulo', idEditorial = '$idEditorial', idAutor = '$idAutor'
+			WHERE idLibro = $id";
+
+	if(mySqli_query($mysqli,$sql)){
+		echo json_encode(array('answ' =>false));
+	} else {
+		echo json_encode(array('answ' =>true));
+	}
+} elseif($_POST['action']=='delete'){
+	$cod = $_POST['id'];
+
+	$sql = "DELETE FROM tbllibro WHERE idLibro = '$cod'";
+	if(mySqli_query($mysqli,$sql)){
+		echo json_encode(array('answ' =>false));
+	} else {
+		echo json_encode(array('answ' =>true));
+	}
+} 
 
 $mysqli->close();
 ?>

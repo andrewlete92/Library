@@ -13,6 +13,7 @@
 <form action="" id="formLibros">
 	<div class="row">
 		<div class="col">
+      <input class="form-control" name="id" id="id" hidden="true">
       <select class="form-control" id="SelectLibro">
           <option value="0">Seleccione Libro</option>   
       </select>
@@ -25,9 +26,12 @@
     <div class="col">
       <input type="number" class="form-control" placeholder="Copias *" id="numCopias" name="numCopias">
     </div>
-		<div class="col">
-			<button class="btn btn-primary" id="btnSaveLibSuc">GUARDAR</button>
-		</div>
+    <div class="col">
+      <input class="btn btn-primary" id="btnAction" value="GUARDAR">
+    </div>
+    <div class="col">
+      <input type="button" class="btn btnCancel" id="btnCancel" value="CANCELAR" hidden="true">
+    </div>
 	</div>
 </form>
 <div id="modal" role="dialog">
@@ -40,7 +44,7 @@
       <th scope="col">Titulo</th>
       <th scope="col">Sucursal</th>
       <th scope="col">Copias</th>
-      <th scope="col">Eliminar</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
   <tbody id="contentLibro_Sucursal">
