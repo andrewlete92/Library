@@ -30,9 +30,6 @@
 		</div>
 	</div>
 </form>
-<div id="modal" role="dialog">
-      
-</div>
 </div>
 <table class="table table-hover table-bordered">
   <thead class="thead-dark">

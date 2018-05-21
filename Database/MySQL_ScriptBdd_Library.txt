@@ -94,4 +94,53 @@ INNER JOIN tbllibro l ON c.idLibro = l.idLibro
 INNER JOIN tblsucursal s ON c.idSucursal = s.idSucursal
 ORDER BY l.titulo;
 
-555	Educar	Carrera 25	4654981
+create table tblLector(
+
+NumTarjeta int primary key,
+nombre varchar(100), 
+direccion varchar(50),
+telefono varchar(12),
+correoe varchar(100)
+);
+
+insert into tblLector values
+(1111111, 'Maria Perez', 'Cra 40', '5468513', 'mariap@hotmail.com'),
+(1111112, 'Pedro Alvarez', 'Cra 12', '4545456', 'pedroa@hotmail.com'),
+(1111113, 'Yenfy Pino', 'Cra 41', '789786', 'yenfy@hotmail.com'),
+(1111114, 'Alejandro Rojas', 'Cra 98', '1234545', 'alejor@hotmail.com'),
+(1111115, 'Paula Aguirre', 'Cra 78', '4345645', 'pau@hotmail.com'),
+(1111116, 'Agustin Alzate', 'Cra 45', '8646456', 'agus@hotmail.com'),
+(1111117, 'Juan Ivo', 'Cra 45', '8942444', 'juani@hotmail.com'),
+(1111118, 'Andres Lopez', 'Cra 45', '8942444', 'juani@hotmail.com')
+
+create table tblPrestamos(
+
+idLibro int,
+idSucursal int,
+Numtarjeta int,
+fechap date,
+fechadev date
+);
+
+insert into tblPrestamos values 
+(1111, 12, 1111111, '2018-04-05', '2018-04-10'),
+(1111, 11, 1111112, '2017-12-05', '2017-12-10'),
+(1112, 12, 1111114, '2018-01-05', '2018-01-10'),
+(1113, 13, 1111113, '2018-02-05', '2018-02-10'),
+(1113, 12, 1111111, '2017-04-05', '2017-04-10'),
+(1112, 12, 1111118, '2017-11-15', '2017-11-25')
+
+CREATE VIEW vw_libros_sucursal_chart
+AS
+SELECT s.NomSucursal as Sucursal, COUNT(*) AS LibrosPrestados
+FROM tblprestamos pr
+INNER JOIN tblsucursal s ON pr.idSucursal = s.idSucursal
+GROUP BY s.NomSucursal;
+
+CREATE VIEW vw_Libros_lector
+AS
+SELECT l.nombre as Lector, COUNT(*)
+FROM tblprestamos pr
+INNER JOIN tblsucursal s ON pr.idSucursal = s.idSucursal
+INNER JOIN tbllector l ON l.NumTarjeta = pr.Numtarjeta
+GROUP BY l.nombre
